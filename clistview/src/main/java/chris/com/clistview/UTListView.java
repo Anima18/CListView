@@ -1,6 +1,7 @@
 package chris.com.clistview;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -15,6 +16,7 @@ import chris.com.clistview.listview.adapter.UTBaseAdapter;
 import chris.com.clistview.listview.adapter.UTCABAdapter;
 import chris.com.clistview.listview.itemevent.ItemElementClickEvent;
 import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
+import chris.com.clistview.listview.util.CommonUtil;
 
 
 /**
@@ -24,7 +26,7 @@ import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
 public class UTListView extends ListView implements ListViewEvent {
     private static final String TAG = "UTListView";
     private Context mContext;
-    private String itemLayout;
+    private int itemLayout;
     private String mode;
     private String actionMenus;
     private UTBaseAdapter adapter;
@@ -44,34 +46,24 @@ public class UTListView extends ListView implements ListViewEvent {
     public UTListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        /*TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.UTListView);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.UTListView);
 
-        itemLayout = array.getString(R.styleable.UTListView_itemLayout);
+        itemLayout = array.getResourceId(R.styleable.UTListView_itemLayout, 0);
         mode = array.getString(R.styleable.UTListView_mode);
+        actionMenus = array.getString(R.styleable.UTListView_actionMenus);
 
-        if(CommonUtil.isNotEmpty(itemLayout)) {
+        if(itemLayout != 0) {
             bindAdapter();
         }
-        array.recycle();*/
-    }
 
-    public void setItemLayout(String itemLayout) {
-        this.itemLayout = itemLayout;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
-    public void setActionMenus(String actionMenus) {
-        this.actionMenus = actionMenus;
+        array.recycle();
     }
 
     public void bindAdapter() {
         Log.i(TAG, "bindAdapter");
-        if(TextUtils.isEmpty(itemLayout)) {
+        /*if(TextUtils.isEmpty(itemLayout)) {
             throw new IllegalArgumentException("itemLayout是无效值");
-        }
+        }*/
 
         if(TextUtils.isEmpty(mode)) {
             mode = MODE_NORMAL;
@@ -104,7 +96,7 @@ public class UTListView extends ListView implements ListViewEvent {
         return adapter.getData();
     }
 
-    public String getItemLayout() {
+    public int getItemLayout() {
         return itemLayout;
     }
 

@@ -2,29 +2,29 @@ package chris.com.clistview.listview.adapter;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ut.xmlparser.inflat.LayoutInflater;
-import com.ut.xmlparser.listview.itemevent.ItemEventAble;
-import com.ut.xmlparser.util.TM;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import chris.com.clistview.listview.itemevent.ItemEventAble;
 
 
 public class UTArrayAdapter extends UTBaseAdapter {
 	private static final String TAG = "UTArrayAdapter";
 
-	public UTArrayAdapter(Context context, String layoutFile) {
+	public UTArrayAdapter(Context context, int layoutFile) {
 		this(context, new ArrayList(), layoutFile);
 	}
 
-	private UTArrayAdapter(Context context, List list, String layoutFile) {
+	private UTArrayAdapter(Context context, List list, int layoutFile) {
 		this.mContext = context;
 		this.itemLayoutFile = layoutFile;
 		this.list = list;
-		this.li = new LayoutInflater(mContext);
+		this.li = LayoutInflater.from(context);
 	}
 
 	@Override
@@ -45,11 +45,9 @@ public class UTArrayAdapter extends UTBaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		TM.set();
+
 		convertView = super.getView(position, convertView, parent);
-
 		List<View> itemViews = (List<View>) convertView.getTag();
-
 
 		for(ItemEventAble itemEvent : itemElementEventList) {
 			itemEvent.bindEvent(convertView, position);
@@ -60,7 +58,6 @@ public class UTArrayAdapter extends UTBaseAdapter {
 			showItemViewValue(v, t);
 		}
 
-		TM.drop();
 		return convertView;
 	}
 }

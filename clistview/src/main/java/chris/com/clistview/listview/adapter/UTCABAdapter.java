@@ -6,6 +6,7 @@ import android.support.v7.widget.AppCompatCheckBox;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.view.ActionMode;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,14 +15,13 @@ import android.widget.AbsListView;
 import android.widget.CheckBox;
 import android.widget.ListView;
 
-import com.ut.R;
-import com.ut.xmlparser.custom.UTListView;
-import com.ut.xmlparser.inflat.LayoutInflater;
-import com.ut.xmlparser.listview.itemevent.ItemEventAble;
-import com.ut.xmlparser.util.TM;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import chris.com.clistview.R;
+import chris.com.clistview.UTListView;
+import chris.com.clistview.listview.itemevent.ItemEventAble;
 
 
 public class UTCABAdapter extends UTBaseAdapter {
@@ -63,14 +63,14 @@ public class UTCABAdapter extends UTBaseAdapter {
 	private static final String MENU_NAME_SELECT_ALL = "全选";
 	private static final String MENU_NAME_SELECT_ALL_OFF = "全不选";
 
-	public UTCABAdapter(Context context, String layoutFile, ListView listView) {
+	public UTCABAdapter(Context context, int layoutFile, ListView listView) {
 		this.mContext = context;
 		this.itemLayoutFile = layoutFile;
 		this.list = new ArrayList();
 		this.listView = listView;
 		this.dataStateArray = new SparseBooleanArray();
 		this.checkBoxSparseArray = new SparseArray<>();
-		this.li = new LayoutInflater(mContext);
+		this.li = LayoutInflater.from(context);
 	}
 
 	@Override
@@ -91,8 +91,6 @@ public class UTCABAdapter extends UTBaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		TM.set();
-
 		convertView = super.getView(position, convertView, parent);
 		List<View> itemViews = (List<View>) convertView.getTag();
 
@@ -111,8 +109,6 @@ public class UTCABAdapter extends UTBaseAdapter {
 			showCheckBox(v, position);
 			showItemViewValue(v, t);
 		}
-
-		TM.drop();
 		return convertView;
 	}
 

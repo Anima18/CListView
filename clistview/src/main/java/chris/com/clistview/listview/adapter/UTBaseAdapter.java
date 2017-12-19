@@ -28,7 +28,7 @@ public class UTBaseAdapter extends BaseAdapter implements ListViewEvent {
     /**
      * listView item layout
      */
-    protected String itemLayoutFile;
+    protected int itemLayoutFile;
 
     protected Context mContext;
 
@@ -100,7 +100,7 @@ public class UTBaseAdapter extends BaseAdapter implements ListViewEvent {
 
     @Override
     public void setOnItemElementClickListener(String id, ItemElementClickEvent.OnClickListener listener) {
-        itemElementEventList.add(new ItemElementClickEvent(id, listener));
+        itemElementEventList.add(new ItemElementClickEvent(mContext, id, listener));
     }
 
     public void setMenuNameArray(String[] menuNameArray) {

@@ -2,6 +2,7 @@ package chris.com.clistview.listview.util;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatCheckBox;
+import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.squareup.picasso.Picasso;
+
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
 
+import chris.com.clistview.R;
 import chris.com.clistview.UTListView;
 
 /**
@@ -91,7 +95,7 @@ public class ListViewUtil {
             }
 
             Class viewClass = view.getClass();
-            if(viewClass == TextView.class) {
+            if(viewClass == TextView.class || viewClass == AppCompatTextView.class) {
                 TextView textView = (TextView)view;
                 textView.setText(value);
             } else if(viewClass == ImageView.class) {
@@ -116,7 +120,8 @@ public class ListViewUtil {
     }
 
     private static String getVariable(LayoutInflater li, View view) {
-        return li.getViewToVariableMap().get(view);
+        //return li.getViewToVariableMap().get(view);
+        return view.getContentDescription().toString();
     }
 
 }
