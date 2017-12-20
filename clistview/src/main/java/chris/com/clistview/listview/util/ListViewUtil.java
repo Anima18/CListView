@@ -120,8 +120,8 @@ public class ListViewUtil {
     }
 
     private static String getVariable(LayoutInflater li, View view) {
-        //return li.getViewToVariableMap().get(view);
-        return view.getContentDescription().toString();
+
+        return view.getContentDescription() == null ? null : view.getContentDescription().toString();
     }
 
 }

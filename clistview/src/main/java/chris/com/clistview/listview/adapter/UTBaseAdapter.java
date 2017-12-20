@@ -73,9 +73,7 @@ public class UTBaseAdapter extends BaseAdapter implements ListViewEvent {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.i("UTBaseAdapter", "position:"+position);
         if(null == convertView){
-            Log.i("UTBaseAdapter", "getView:"+position);
             ItemView itemView = new ItemView(mContext);
             convertView = itemView.inflate(li, parent, itemLayoutFile, mode);
             if(convertView instanceof ViewGroup) {

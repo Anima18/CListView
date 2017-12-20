@@ -14,5 +14,5 @@
         android:textSize="16sp"
         android:textColor="#212121"
         android:text="hello world"
-        android:contentDescription="name" />
+        android:contentDescription="dqzybanci_fname" />
 </LinearLayout>
