@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <chris.com.clistview.UTSectionListView
+        android:id="@+id/sectionListAct_lv"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:divider="#CCCCCC"
+        android:dividerHeight="1px"
+        app:itemLayout="@layout/listview_section_item"
+        app:sectionLayout="@layout/listview_section"/>
+
+</android.support.constraint.ConstraintLayout>

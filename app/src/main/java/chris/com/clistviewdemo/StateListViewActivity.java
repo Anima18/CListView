@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.ut.requsetmanager.callback.DataRequestCallback;
 import com.ut.requsetmanager.entity.ResponseStatus;
@@ -46,8 +47,12 @@ public class StateListViewActivity extends AppCompatActivity {
                 .setPlatformService(PlatformServiceType.DATA_CENTER_SERVICE)
                 .send(new DataRequestCallback<List>() {
                     @Override
-                    public void onResult(List data, ResponseStatus status) {;
-                        listView.setData(data);
+                    public void onResult(List data, ResponseStatus status) {
+                        if(status.getCode() == 200) {
+                            listView.setData(data);
+                        }else {
+                            Toast.makeText(StateListViewActivity.this, status.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
     }

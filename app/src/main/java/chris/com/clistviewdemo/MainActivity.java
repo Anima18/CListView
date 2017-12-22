@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         items = new ArrayList<>();
         items.add(new Item("ListView", ListViewActivity.class));
         items.add(new Item("StateListView", StateListViewActivity.class));
-        items.add(new Item("SectionListView", null));
+        items.add(new Item("SectionListView", SectionListViewActivity.class));
         listView.setData(items);
     }
 }

@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="itemLayout" format="reference"/>
    <declare-styleable name="UTListView" >
-        <attr name="itemLayout" format="reference"/>
+        <attr name="itemLayout"/>
         <attr name="mode" format="string"/>
         <attr name="actionMenus" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="UTSectionListView" >
+        <attr name="itemLayout"/>
+        <attr name="sectionLayout" format="reference"/>
+    </declare-styleable>
+    
+    <declare-styleable name="UTToolbar">
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+        <attr name="rightMenu" format="reference"/>
+        <attr name="navigationMenu" format="reference"/>
+        <attr name="moreMenu" format="string"/>
+        <attr name="spinnerItems" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="UTSpinner">
+        <attr name="items" format="string"/>
+        <attr name="itemField" format="string"/>
+    </declare-styleable>
 </resources>

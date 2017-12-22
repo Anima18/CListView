@@ -2,6 +2,7 @@ package chris.com.clistview.listview.util;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatCheckBox;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -98,7 +99,7 @@ public class ListViewUtil {
             if(viewClass == TextView.class || viewClass == AppCompatTextView.class) {
                 TextView textView = (TextView)view;
                 textView.setText(value);
-            } else if(viewClass == ImageView.class) {
+            } else if(viewClass == ImageView.class || viewClass == AppCompatImageView.class) {
                 ImageView iv = (ImageView) view;
                 String url = value;
                 if(url.contains("file:///android_asset/")) {
