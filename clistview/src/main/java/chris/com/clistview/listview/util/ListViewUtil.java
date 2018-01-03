@@ -2,8 +2,6 @@ package chris.com.clistview.listview.util;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.squareup.picasso.Picasso;
 
@@ -95,11 +92,11 @@ public class ListViewUtil {
                 value = ListViewUtil.getPropertyValue(t, variable).toString();
             }
 
-            Class viewClass = view.getClass();
-            if(viewClass == TextView.class || viewClass == AppCompatTextView.class) {
+            //Class viewClass = view.getClass();
+            if(view instanceof TextView) {
                 TextView textView = (TextView)view;
                 textView.setText(value);
-            } else if(viewClass == ImageView.class || viewClass == AppCompatImageView.class) {
+            } else if(view instanceof ImageView) {
                 ImageView iv = (ImageView) view;
                 String url = value;
                 if(url.contains("file:///android_asset/")) {
@@ -109,7 +106,7 @@ public class ListViewUtil {
                 }else {
                     Picasso.with(context).load(new File(context.getFilesDir().getPath() +  File.separator + url)).fit().centerCrop().placeholder(R.drawable.image_default).error(R.drawable.image_not_found).into(iv);
                 }
-            } else if(viewClass == CheckBox.class || viewClass == AppCompatCheckBox.class) {
+            } else if(view instanceof CheckBox) {
                 CheckBox checkBox = (CheckBox)view;
                 checkBox.setChecked(Boolean.valueOf(value));
             }
