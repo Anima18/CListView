@@ -131,3 +131,7 @@ NetworkRequestImpl.create(this)
                     }
                 });
 ```
+
+4. 效果图  
+
+![image](https://raw.githubusercontent.com/Anima18/CListView/master/images/S80104-19193302.jpg)
