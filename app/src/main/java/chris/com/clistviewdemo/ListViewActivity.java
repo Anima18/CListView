@@ -36,13 +36,12 @@ public class ListViewActivity extends AppCompatActivity {
 
     private void setData() {
         NetworkRequestImpl.create(this)
-                .setUrl("http://192.168.60.104:44423/GetRDDataJson?a=&b=&c=getdtobjectdata&d=dtctsvr_objectcode=fdzhizhanglog;dtctsvr_projectversion=1;dtctsvr_projectcode=utdtpower")
+                .setUrl("https://api.github.com/users?since=135")
                 .setMethod("GET")
                 .setProgressMessage("正在加载中，请稍后...")
-                .setPlatformService(PlatformServiceType.DATA_CENTER_SERVICE)
                 .send(new DataRequestCallback<List>() {
                     @Override
-                    public void onResult(List data, ResponseStatus status) {;
+                    public void onResult(List data, ResponseStatus status) {
                         if(status.getCode() == 200) {
                             listView.setData(data);
                         }else {
