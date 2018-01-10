@@ -1,5 +1,6 @@
 package chris.com.clistview.listview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.SparseArray;
@@ -21,7 +22,7 @@ import chris.com.clistview.listview.util.ListViewUtil;
 /**
  * Created by jianjianhong on 2017/3/21.
  */
-
+@SuppressLint("all")
 public class UTSectionAdapter extends BaseAdapter {
 
     private static final int TYPE_ITEM = 0;

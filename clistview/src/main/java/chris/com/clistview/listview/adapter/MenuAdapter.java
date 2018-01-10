@@ -1,5 +1,6 @@
 package chris.com.clistview.listview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import chris.com.clistview.R;
 /**
  * Created by Admin on 2016/8/6.
  */
+@SuppressLint("all")
 public class MenuAdapter extends BaseAdapter {
 
     private Context context;
@@ -39,9 +41,11 @@ public class MenuAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = LayoutInflater.from(context).inflate(R.layout.listview_menu_item, null);
-        TextView textView = (TextView) view.findViewById(R.id.menuList_text);
-        textView.setText(menuList[i]);
+        if(view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.listview_menu_item, viewGroup, false);
+            TextView textView = view.findViewById(R.id.menuList_text);
+            textView.setText(menuList[i]);
+        }
 
         return view;
     }

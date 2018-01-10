@@ -1,5 +1,6 @@
 package chris.com.clistview.listview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,7 +23,7 @@ import chris.com.clistview.listview.util.ListViewUtil;
 /**
  * Created by jianjianhong on 2017/3/9.
  */
-
+@SuppressLint("all")
 public class UTBaseAdapter extends BaseAdapter implements ListViewEvent {
 
     /**
@@ -37,9 +38,6 @@ public class UTBaseAdapter extends BaseAdapter implements ListViewEvent {
      */
     protected String mode;
 
-    /**
-     * listView进入编辑状态时，需要显示的自定义菜单列表
-     */
     protected String[] menuNameArray;
 
     /**

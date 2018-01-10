@@ -39,6 +39,7 @@ public class UTSectionListView extends ListView {
         sectionLayout = array.getResourceId(R.styleable.UTSectionListView_sectionLayout, 0);
 
         bindAdapter();
+        array.recycle();
     }
 
     public void bindAdapter() {

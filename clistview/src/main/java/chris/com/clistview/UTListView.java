@@ -61,9 +61,6 @@ public class UTListView extends ListView implements ListViewEvent {
 
     public void bindAdapter() {
         Log.i(TAG, "bindAdapter");
-        /*if(TextUtils.isEmpty(itemLayout)) {
-            throw new IllegalArgumentException("itemLayout是无效值");
-        }*/
 
         if(TextUtils.isEmpty(mode)) {
             mode = MODE_NORMAL;

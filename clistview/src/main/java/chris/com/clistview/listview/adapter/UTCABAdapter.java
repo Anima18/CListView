@@ -1,5 +1,6 @@
 package chris.com.clistview.listview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatCheckBox;
@@ -23,41 +24,20 @@ import chris.com.clistview.R;
 import chris.com.clistview.UTListView;
 import chris.com.clistview.listview.itemevent.ItemEventAble;
 
-
+@SuppressLint("all")
 public class UTCABAdapter extends UTBaseAdapter {
 	private static final String TAG = "UTArrayAdapter";
 
-	/**
-	 * true表示编辑状态， 显示checkbox
-	 * false表示普通状态，隐藏checkbox
-	 */
 	private boolean isEditState = false;
 
-	/**
-	 * 用来更新listview item选中
-	 */
 	private ListView listView;
 
-	/**
-	 * 保存数据选择状态
-	 */
 	private SparseBooleanArray dataStateArray;
 
-	/**
-	 * 保存checkbox对象
-	 * 1. 编辑状态，显示checkbox；普通状态，隐藏checkbox
-	 * 2. ItemView选中，checkbox选中；取消ItemView选中，就取消checkbox选中
-	 */
 	private SparseArray<CheckBox> checkBoxSparseArray;
 
-	/**
-	 * 全选/全不选menu
-	 */
 	private MenuItem selectStatMenuItem;
 
-	/**
-	 * selectStatMenuItem状态标志，true = 全选，false = 全不选
-	 */
 	private boolean isSelectAll = true;
 
 	private static final String MENU_NAME_SELECT_ALL = "全选";
@@ -128,10 +108,8 @@ public class UTCABAdapter extends UTBaseAdapter {
 				defaultBackground(position);
 			}
 
-			//更新data选择状态
 			dataStateArray.put(position, checked);
 
-			//更新checkbox状态
 			CheckBox checkBox = checkBoxSparseArray.get(position);
 			if(checkBox != null) {
 				checkBox.setChecked(checked);
@@ -153,7 +131,7 @@ public class UTCABAdapter extends UTBaseAdapter {
 				clearAll();
 			}else {
 				if(itemChoiceListener == null) {
-					throw new IllegalArgumentException("listview contextual actionBar menu 没有注册事件");
+					throw new IllegalArgumentException("listview contextual actionBar menu no register event");
 				}
 
 				List<Integer> positionList = new ArrayList<>();

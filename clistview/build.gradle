@@ -27,11 +27,26 @@ android {
     //添加配置
     lintOptions {
 //        checkReleaseBuilds false
-        // Or, if you prefer, you `can continue to check for errors in release builds,
-        // but continue the build even when errors are found:
+        checkReleaseBuilds false
+      //  lintConfig file("lint.xml")
+        // Turns off checks for the issue IDs you specify.
+        disable 'TypographyFractions','TypographyQuotes'
+        // Turns on checks for the issue IDs you specify. These checks are in
+        // addition to the default lint checks.
+        enable 'RtlHardcoded','RtlCompat', 'RtlEnabled'
+        // To enable checks for only a subset of issue IDs and ignore all others,
+        // list the issue IDs with the 'check' property instead. This property overrides
+        // any issue IDs you enable or disable using the properties above.
+        check 'NewApi', 'InlinedApi'
+        // If set to true, turns off analysis progress reporting by lint.
+        quiet true
+        // if set to true (default), stops the build if errors are found.
         abortOnError false
+        // if true, only report errors.
+        ignoreWarnings true
     }
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -42,13 +57,15 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.5.2'
 }
 
+
+
 //项目主页
 def siteUrl = 'https://github.com/Anima18/CListView'
 //项目的git地址
 def gitUrl = 'git@github.com:Anima18/CListView.git'
 
 def libName = "CListView"; // 上传到 Bintray 的 package 名称。
-group = "com.anima18.clistview";
+group = "com.anima";
 version = "1.0.1"
 // 这两个参数配置是为了最终生成 compile 'me.lfq:依赖库的名称:1.0.0'  group  version 是关键字，自动识别的。只需配置好就行。
 
@@ -101,7 +118,7 @@ bintray {
     configurations = ['archives']
     pkg {
         //这里的repo值必须要和你创建Maven仓库的时候的名字一样
-        repo = "custom"
+        repo = "maven"
         //发布到JCenter上的项目名字
         name = libName
         websiteUrl = siteUrl
@@ -110,6 +127,7 @@ bintray {
         publish = true //是否是公开项目。
     }
 }
+
 
 // 生成jar包的task，不需要修改。
 task sourcesJar(type: Jar) {
@@ -128,7 +146,19 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
+
 artifacts {
     archives javadocJar
     archives sourcesJar
+}
+
+javadoc {
+    options {
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "https://docs.oracle.com/javase/7/docs/api"
+    }
 }

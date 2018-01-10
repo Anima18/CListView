@@ -1,5 +1,6 @@
 package chris.com.clistview.listview.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -12,7 +13,7 @@ import java.util.List;
 
 import chris.com.clistview.listview.itemevent.ItemEventAble;
 
-
+@SuppressLint("all")
 public class UTArrayAdapter extends UTBaseAdapter {
 	private static final String TAG = "UTArrayAdapter";
 

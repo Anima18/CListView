@@ -74,7 +74,7 @@ public class UTSpinner extends AppCompatSpinner {
 
     public void setItems(List data) {
         if(TextUtils.isEmpty(itemField)) {
-            throw new IllegalArgumentException("itemField不能为空");
+            throw new IllegalArgumentException("itemField Can't be empty");
         }
 
         itemList.clear();
@@ -104,7 +104,7 @@ public class UTSpinner extends AppCompatSpinner {
 
     public void setItems(String[] items) {
         if(items == null) {
-            throw new IllegalArgumentException("items 不能为空");
+            throw new IllegalArgumentException("items Can't be empty");
         }
         this.itemList.clear();
         this.itemList.addAll(Arrays.asList(items));
