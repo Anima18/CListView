@@ -1,5 +1,6 @@
 package chris.com.clistview.listview.util;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
@@ -9,6 +10,7 @@ import android.view.View;
 /**
  * Created by Admin on 2016/7/24.
  */
+@SuppressLint("all")
 public class CommonUtil {
 
     public static int dipToPixels(Context context, float dipValue) {
