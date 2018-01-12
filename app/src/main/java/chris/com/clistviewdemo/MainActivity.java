@@ -7,10 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 
-import com.ut.requsetmanager.callback.DataRequestCallback;
-import com.ut.requsetmanager.entity.ResponseStatus;
-import com.ut.requsetmanager.entity.platformservice.PlatformServiceType;
-import com.ut.requsetmanager.request.NetworkRequestImpl;
 
 import java.util.ArrayList;
 import java.util.List;

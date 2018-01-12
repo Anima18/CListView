@@ -3,19 +3,15 @@ package chris.com.clistviewdemo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.ut.requsetmanager.callback.DataRequestCallback;
 import com.ut.requsetmanager.entity.ResponseStatus;
-import com.ut.requsetmanager.entity.platformservice.PlatformServiceType;
 import com.ut.requsetmanager.request.NetworkRequestImpl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import chris.com.clistview.UTListView;
-import chris.com.clistviewdemo.entity.Item;
 
 /**
  * Created by jianjianhong on 2017/12/20.
