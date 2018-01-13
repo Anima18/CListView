@@ -12,6 +12,10 @@ ClistView类型：
 3. UTStateListView
 
 ## 使用
+### 安装
+```
+implementation 'com.anima:CListView:1.0.4'
+```
 
 ### 使用步骤
 1. 设置ListView布局
@@ -55,8 +59,8 @@ https://api.github.com/users?since=135
 
 
 
-### UTListView使用
-1. UTListView布局
+### CListView使用
+1. CListView使用
 app:itemLayout 是ListView item的布局
 
 ```
@@ -66,7 +70,7 @@ app:itemLayout 是ListView item的布局
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <chris.com.clistview.UTListView
+    <chris.com.clistview.CListView使用
         android:id="@+id/listAct_lv"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import chris.com.clistview.R;
-import chris.com.clistview.UTListView;
+import chris.com.clistview.CListView;
 import chris.com.clistview.listview.util.CommonUtil;
 
 
@@ -32,7 +32,7 @@ public class ItemView{
 	public View inflate(LayoutInflater li, ViewGroup parent, int xmlFile, String mode) {
         root =  li.inflate(xmlFile, parent, false);
 
-		if(UTListView.MODE_MULTICHOICE.equals(mode)) {
+		if(CListView.MODE_MULTICHOICE.equals(mode)) {
 			addCheckbox(parent);
 		}
 

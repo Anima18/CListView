@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <chris.com.clistview.UTListView
+    <chris.com.clistview.CListView
         android:id="@+id/listAct_lv"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="itemLayout" format="reference"/>
-   <declare-styleable name="UTListView" >
+   <declare-styleable name="CListView" >
         <attr name="itemLayout"/>
         <attr name="mode" format="string"/>
         <attr name="actionMenus" format="string"/>
     </declare-styleable>
 
-    <declare-styleable name="UTSectionListView" >
+    <declare-styleable name="CSectionListView" >
         <attr name="itemLayout"/>
         <attr name="sectionLayout" format="reference"/>
     </declare-styleable>
 
-    <declare-styleable name="UTSpinner">
+    <declare-styleable name="CSpinner">
         <attr name="items" format="string"/>
         <attr name="itemField" format="string"/>
     </declare-styleable>

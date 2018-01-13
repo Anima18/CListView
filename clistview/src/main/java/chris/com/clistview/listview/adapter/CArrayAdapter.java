@@ -14,14 +14,14 @@ import java.util.List;
 import chris.com.clistview.listview.itemevent.ItemEventAble;
 
 @SuppressLint("all")
-public class UTArrayAdapter extends UTBaseAdapter {
+public class CArrayAdapter extends CBaseAdapter {
 	private static final String TAG = "UTArrayAdapter";
 
-	public UTArrayAdapter(Context context, int layoutFile) {
+	public CArrayAdapter(Context context, int layoutFile) {
 		this(context, new ArrayList(), layoutFile);
 	}
 
-	private UTArrayAdapter(Context context, List list, int layoutFile) {
+	private CArrayAdapter(Context context, List list, int layoutFile) {
 		this.mContext = context;
 		this.itemLayoutFile = layoutFile;
 		this.list = list;

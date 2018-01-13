@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 import chris.com.clistview.R;
-import chris.com.clistview.UTListView;
+import chris.com.clistview.CListView;
 
 /**
  * Created by jianjianhong on 2017/3/9.
@@ -37,7 +37,7 @@ public class ListViewUtil {
                 traverseViewGroup(li, (ViewGroup)child, itemViewList, mode);
             } else if(!TextUtils.isEmpty(variable)) {
                 itemViewList.add(child);
-            } else if(UTListView.MODE_MULTICHOICE.equals(mode) && TextUtils.isEmpty(variable)
+            } else if(CListView.MODE_MULTICHOICE.equals(mode) && TextUtils.isEmpty(variable)
                     && (child.getClass() == CheckBox.class || child.getClass() == AppCompatCheckBox.class)) {
                 itemViewList.add(child);
             }

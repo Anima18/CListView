@@ -23,7 +23,7 @@ import chris.com.clistview.listview.util.ListViewUtil;
  * Created by jianjianhong on 2017/3/21.
  */
 @SuppressLint("all")
-public class UTSectionAdapter extends BaseAdapter {
+public class CSectionAdapter extends BaseAdapter {
 
     private static final int TYPE_ITEM = 0;
     private static final int TYPE_SEPARATOR = 1;
@@ -48,7 +48,7 @@ public class UTSectionAdapter extends BaseAdapter {
         this.listener = listener;
     }
 
-    public UTSectionAdapter(Context context, int sectionLayout, int itemLayout) {
+    public CSectionAdapter(Context context, int sectionLayout, int itemLayout) {
         this.mContext = context;
         this.sectionLayout = sectionLayout;
         this.itemLayout = itemLayout;

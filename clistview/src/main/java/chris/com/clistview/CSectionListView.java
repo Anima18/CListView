@@ -7,36 +7,36 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import chris.com.clistview.listview.adapter.UTSectionAdapter;
+import chris.com.clistview.listview.adapter.CSectionAdapter;
 
 /**
  * Created by jianjianhong on 2017/3/22.
  */
 
-public class UTSectionListView extends ListView {
+public class CSectionListView extends ListView {
 
     private Context mContext;
     private int sectionLayout;
     private int itemLayout;
 
-    private UTSectionAdapter adapter;
+    private CSectionAdapter adapter;
 
-    public UTSectionListView(Context context) {
+    public CSectionListView(Context context) {
         this(context, null);
     }
 
-    public UTSectionListView(Context context, AttributeSet attrs) {
+    public CSectionListView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public UTSectionListView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CSectionListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
 
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.UTSectionListView);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CSectionListView);
 
-        itemLayout = array.getResourceId(R.styleable.UTSectionListView_itemLayout, 0);
-        sectionLayout = array.getResourceId(R.styleable.UTSectionListView_sectionLayout, 0);
+        itemLayout = array.getResourceId(R.styleable.CSectionListView_itemLayout, 0);
+        sectionLayout = array.getResourceId(R.styleable.CSectionListView_sectionLayout, 0);
 
         bindAdapter();
         array.recycle();
@@ -50,7 +50,7 @@ public class UTSectionListView extends ListView {
             throw new IllegalArgumentException("itemLayout can't be null");
         }
 
-        adapter = new UTSectionAdapter(mContext, sectionLayout, itemLayout);
+        adapter = new CSectionAdapter(mContext, sectionLayout, itemLayout);
         this.setAdapter(adapter);
     }
 
@@ -62,7 +62,7 @@ public class UTSectionListView extends ListView {
         adapter.setData(sectionData, childProperty);
     }
 
-    public void setOnSectionItemClickListener(UTSectionAdapter.OnSectionItemClickListener listener) {
+    public void setOnSectionItemClickListener(CSectionAdapter.OnSectionItemClickListener listener) {
         adapter.setOnSectionItemClickListener(listener);
     }
 }

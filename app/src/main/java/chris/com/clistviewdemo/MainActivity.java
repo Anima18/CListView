@@ -11,13 +11,13 @@ import android.widget.AdapterView;
 import java.util.ArrayList;
 import java.util.List;
 
-import chris.com.clistview.UTListView;
+import chris.com.clistview.CListView;
 import chris.com.clistviewdemo.entity.Item;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "CListView";
 
-    private UTListView listView;
+    private CListView listView;
     private List<Item> items;
 
     @Override

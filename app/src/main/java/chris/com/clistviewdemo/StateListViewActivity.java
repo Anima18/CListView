@@ -12,7 +12,7 @@ import com.ut.requsetmanager.request.NetworkRequestImpl;
 
 import java.util.List;
 
-import chris.com.clistview.UTListView;
+import chris.com.clistview.CListView;
 import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
 
 /**
@@ -21,7 +21,7 @@ import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
 
 public class StateListViewActivity extends AppCompatActivity {
     private static final String TAG = "StateListView";
-    private UTListView listView;
+    private CListView listView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

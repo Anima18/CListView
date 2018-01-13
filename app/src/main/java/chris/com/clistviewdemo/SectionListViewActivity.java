@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import chris.com.clistview.UTSectionListView;
+import chris.com.clistview.CSectionListView;
 import chris.com.clistviewdemo.entity.Course;
 import chris.com.clistviewdemo.entity.User;
 
@@ -17,7 +17,7 @@ import chris.com.clistviewdemo.entity.User;
 
 public class SectionListViewActivity extends AppCompatActivity {
 
-    private UTSectionListView listView;
+    private CSectionListView listView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import chris.com.clistview.R;
-import chris.com.clistview.UTListView;
+import chris.com.clistview.CListView;
 import chris.com.clistview.listview.itemevent.ItemEventAble;
 
 @SuppressLint("all")
-public class UTCABAdapter extends UTBaseAdapter {
+public class CABAdapter extends CBaseAdapter {
 	private static final String TAG = "UTArrayAdapter";
 
 	private boolean isEditState = false;
@@ -43,7 +43,7 @@ public class UTCABAdapter extends UTBaseAdapter {
 	private static final String MENU_NAME_SELECT_ALL = "全选";
 	private static final String MENU_NAME_SELECT_ALL_OFF = "全不选";
 
-	public UTCABAdapter(Context context, int layoutFile, ListView listView) {
+	public CABAdapter(Context context, int layoutFile, ListView listView) {
 		this.mContext = context;
 		this.itemLayoutFile = layoutFile;
 		this.list = new ArrayList();
@@ -251,7 +251,7 @@ public class UTCABAdapter extends UTBaseAdapter {
 	}
 
 	private void showCheckBox(View view, int position) {
-		if((view.getClass() == CheckBox.class || view.getClass() == AppCompatCheckBox.class) && mode.equals(UTListView.MODE_MULTICHOICE)) {
+		if((view.getClass() == CheckBox.class || view.getClass() == AppCompatCheckBox.class) && mode.equals(CListView.MODE_MULTICHOICE)) {
 			CheckBox checkBox = ((CheckBox)view);
 			checkBoxSparseArray.put(position, checkBox);
 

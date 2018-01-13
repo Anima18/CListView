@@ -24,7 +24,7 @@ import chris.com.clistview.listview.util.ListViewUtil;
  * Created by jianjianhong on 2017/3/9.
  */
 @SuppressLint("all")
-public class UTBaseAdapter extends BaseAdapter implements ListViewEvent {
+public class CBaseAdapter extends BaseAdapter implements ListViewEvent {
 
     /**
      * listView item layout

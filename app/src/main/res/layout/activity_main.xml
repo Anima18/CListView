@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="chris.com.clistviewdemo.MainActivity">
 
-    <chris.com.clistview.UTListView
+    <chris.com.clistview.CListView
         android:id="@+id/mainAct_lv"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

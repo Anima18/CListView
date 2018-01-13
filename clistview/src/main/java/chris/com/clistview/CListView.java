@@ -11,46 +11,45 @@ import android.widget.ListView;
 import java.util.List;
 
 import chris.com.clistview.listview.ListViewEvent;
-import chris.com.clistview.listview.adapter.UTArrayAdapter;
-import chris.com.clistview.listview.adapter.UTBaseAdapter;
-import chris.com.clistview.listview.adapter.UTCABAdapter;
+import chris.com.clistview.listview.adapter.CArrayAdapter;
+import chris.com.clistview.listview.adapter.CBaseAdapter;
+import chris.com.clistview.listview.adapter.CABAdapter;
 import chris.com.clistview.listview.itemevent.ItemElementClickEvent;
 import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
-import chris.com.clistview.listview.util.CommonUtil;
 
 
 /**
  * Created by jianjianhong on 2017/3/7.
  */
 
-public class UTListView extends ListView implements ListViewEvent {
+public class CListView extends ListView implements ListViewEvent {
     private static final String TAG = "UTListView";
     private Context mContext;
     private int itemLayout;
     private String mode;
     private String actionMenus;
-    private UTBaseAdapter adapter;
+    private CBaseAdapter adapter;
 
     public static final String MODE_NORMAL = "Normal";
     public static final String MODE_MULTICHOICE = "MultiChoice";
     public static final String MODE_SINGLECHOICE = "SingleChoice";
 
-    public UTListView(Context context) {
+    public CListView(Context context) {
         this(context, null);
     }
 
-    public UTListView(Context context, AttributeSet attrs) {
+    public CListView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public UTListView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = context;
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.UTListView);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CListView);
 
-        itemLayout = array.getResourceId(R.styleable.UTListView_itemLayout, 0);
-        mode = array.getString(R.styleable.UTListView_mode);
-        actionMenus = array.getString(R.styleable.UTListView_actionMenus);
+        itemLayout = array.getResourceId(R.styleable.CListView_itemLayout, 0);
+        mode = array.getString(R.styleable.CListView_mode);
+        actionMenus = array.getString(R.styleable.CListView_actionMenus);
 
         if(itemLayout != 0) {
             bindAdapter();
@@ -67,12 +66,12 @@ public class UTListView extends ListView implements ListViewEvent {
         }
 
         if(MODE_NORMAL.equals(mode)) {
-            adapter = new UTArrayAdapter(mContext, itemLayout);
+            adapter = new CArrayAdapter(mContext, itemLayout);
             adapter.setMode(mode);
             this.setAdapter(adapter);
 
         }else if(MODE_MULTICHOICE.equals(mode)) {
-            adapter = new UTCABAdapter(mContext, itemLayout, this);
+            adapter = new CABAdapter(mContext, itemLayout, this);
             adapter.setMode(mode);
 
             if(!TextUtils.isEmpty(actionMenus)) {
@@ -81,7 +80,7 @@ public class UTListView extends ListView implements ListViewEvent {
 
             this.setAdapter(adapter);
             this.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-            this.setMultiChoiceModeListener(((UTCABAdapter)adapter).listener);
+            this.setMultiChoiceModeListener(((CABAdapter)adapter).listener);
         }
     }
 

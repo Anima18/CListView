@@ -1,13 +1,11 @@
 package chris.com.clistview;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.support.v7.widget.AppCompatSpinner;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
 
 import java.util.ArrayList;
@@ -20,7 +18,7 @@ import chris.com.clistview.listview.util.ListViewUtil;
  * Created by jianjianhong on 2017/3/17.
  */
 
-public class UTSpinner extends AppCompatSpinner {
+public class CSpinner extends AppCompatSpinner {
 
     private ArrayAdapter<String> adapter;
     private List<String> itemList = new ArrayList<>();
@@ -28,24 +26,24 @@ public class UTSpinner extends AppCompatSpinner {
     private Context mContext;
     private String itemField;
 
-    public UTSpinner(Context context) {
+    public CSpinner(Context context) {
         this(context, null);
     }
 
-    public UTSpinner(Context context, AttributeSet attrs) {
+    public CSpinner(Context context, AttributeSet attrs) {
         this(context, attrs, android.R.attr.spinnerStyle);
     }
 
-    public UTSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.mContext = context;
 
-        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.UTSpinner);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.CSpinner);
 
-        String items = array.getString(R.styleable.UTSpinner_items);
+        String items = array.getString(R.styleable.CSpinner_items);
         setItems(items);
 
-        String itemField = array.getString(R.styleable.UTSpinner_itemField);
+        String itemField = array.getString(R.styleable.CSpinner_itemField);
         setItemField(itemField);
 
         array.recycle();

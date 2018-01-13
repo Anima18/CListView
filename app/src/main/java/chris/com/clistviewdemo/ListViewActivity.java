@@ -11,7 +11,7 @@ import com.ut.requsetmanager.request.NetworkRequestImpl;
 
 import java.util.List;
 
-import chris.com.clistview.UTListView;
+import chris.com.clistview.CListView;
 
 /**
  * Created by jianjianhong on 2017/12/20.
@@ -19,7 +19,7 @@ import chris.com.clistview.UTListView;
 
 public class ListViewActivity extends AppCompatActivity {
 
-    private UTListView listView;
+    private CListView listView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
