@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CListView.iml" filepath="$PROJECT_DIR$/CListView.iml" />
+      <module fileurl="file://F:\code\github_workspace\CListViewDemo\CListView.iml" filepath="F:\code\github_workspace\CListViewDemo\CListView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CListViewDemo.iml" filepath="$PROJECT_DIR$/CListViewDemo.iml" />
       <module fileurl="file://E:\code\GitHub\CListView\CListViewDemo.iml" filepath="E:\code\GitHub\CListView\CListViewDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/clistview/clistview.iml" filepath="$PROJECT_DIR$/clistview/clistview.iml" />

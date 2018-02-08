@@ -65,7 +65,7 @@ publish{
     userOrg = 'anima'//bintray.com的用户名
     groupId = 'com.anima'//jcenter上的路径
     artifactId = 'CListView'//项目名称
-    publishVersion = '1.0.4'//版本号
+    publishVersion = '1.0.6'//版本号
     desc = 'a general ListView'//描述，不重要
     website = siteUrl//项目主页
 }

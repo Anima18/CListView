@@ -14,7 +14,7 @@ ClistView类型：
 ## 使用
 ### 安装
 ```
-implementation 'com.anima:CListView:1.0.6'
+implementation 'com.anima:CListView:1.0.4'
 ```
 
 ### 使用步骤
@@ -139,50 +139,3 @@ NetworkRequestImpl.create(this)
 4. 效果图  
 
 ![image](https://raw.githubusercontent.com/Anima18/CListView/master/images/S80104-19193302.jpg)
-
-### CToolbar
-
-布局设置
-```
-<chris.com.clistview.CToolbar
-        android:id="@+id/state_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:backgroundColor="@color/colorPrimary"
-        app:navigationMenu="@drawable/ic_action_back"
-        app:rightMenu="@android:drawable/ic_menu_camera"
-        app:moreMenu="新增,删除,修改"
-        app:text="通用列表"
-        app:textColor="#FFFFFF"/>
-```
-代码设置
-
-```
-toolbar = findViewById(R.id.state_toolbar);
-//设置返回点击监听
-toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        StateListViewActivity.this.finish();
-    }
-});
-
-//设置右边菜单点击监听
-toolbar.setRightIconOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Toast.makeText(StateListViewActivity.this, "rightIcon click", Toast.LENGTH_SHORT).show();
-    }
-});
-
-//设置更多菜单点击监听
-toolbar.setMoreMenuItemClickListener(new CToolbar.OnItemClickListener() {
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(StateListViewActivity.this, "menu "+position + " click", Toast.LENGTH_SHORT).show();
-    }
-});
-```
-效果图
-
-![image](https://raw.githubusercontent.com/Anima18/CListView/master/images/CListView_toolbar.jpg)

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.ut.requsetmanager.callback.DataRequestCallback;
@@ -13,6 +15,7 @@ import com.ut.requsetmanager.request.NetworkRequestImpl;
 import java.util.List;
 
 import chris.com.clistview.CListView;
+import chris.com.clistview.CToolbar;
 import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
 
 /**
@@ -22,6 +25,7 @@ import chris.com.clistview.listview.itemevent.OnItemChoiceListener;
 public class StateListViewActivity extends AppCompatActivity {
     private static final String TAG = "StateListView";
     private CListView listView;
+    private CToolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +40,31 @@ public class StateListViewActivity extends AppCompatActivity {
             }
         });
         setData();
+
+        toolbar = findViewById(R.id.state_toolbar);
+        //设置返回点击监听
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StateListViewActivity.this.finish();
+            }
+        });
+
+        //设置右边菜单点击监听
+        toolbar.setRightIconOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(StateListViewActivity.this, "rightIcon click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //设置更多菜单点击监听
+        toolbar.setMoreMenuItemClickListener(new CToolbar.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(StateListViewActivity.this, "menu "+position + " click", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void setData() {
